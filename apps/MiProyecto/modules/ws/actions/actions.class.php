@@ -212,7 +212,7 @@ class wsActions extends sfActions {
         if (is_array($json)) {
             //Aqui recupero los datos del mensaje y creo el objeto mensaje
             $mensaje = new Mensajes();
-
+            
             $mensaje->setTexto($json['texto']);
             $mensaje->setIdUsuario($json['idUsuario']);
             $mensaje->setIdConversacion($json['idConver']);
@@ -220,9 +220,15 @@ class wsActions extends sfActions {
 
             $mensaje->save();
 
-            $this->RecuperarID($mensaje);
+            $newMensaje = array('id' => $mensaje->getPrimaryKey(),
+                'texto' => $mensaje->getTexto(),
+                'idUsuario' => $mensaje->getIdUsuario(),
+                'idConver' => $mensaje->getIdConversacion());
+            
+            $this->mensaje = $this->getJson($newMensaje);
         } else {
             //Datos del response no validos
+            
         }
     }
 
@@ -249,11 +255,11 @@ class wsActions extends sfActions {
                 foreach ($mensajes as $value) {
 
                     $mensaje = array(
-                        'IdMensaje' => $value->getIdMensaje(),
-                        'Texto' => $value->getTexto(),
-                        'IdUsuario' => $value->getIdUsuario(),
-                        'IdConversacion' => $value->getIdConversacion(),
-                        'Date' => $value->getDate());
+                        'idMensaje' => $value->getIdMensaje(),
+                        'texto' => $value->getTexto(),
+                        'idUsuario' => $value->getIdUsuario(),
+                        'idConversacion' => $value->getIdConversacion(),
+                        'date' => $value->getDate());
 
                     array_push($mensajesPedidos, $mensaje);
                 }
