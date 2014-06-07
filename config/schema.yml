@@ -1,0 +1,92 @@
+---
+propel: 
+  _attributes: 
+    package: lib.model
+  CONVERSACIONES: 
+    _attributes: 
+      idMethod: native
+    id_conversacion: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    nombre: 
+      type: CHAR
+      size: 50
+    propietario: 
+      type: VARCHAR
+      size: 30
+  MENSAJES: 
+    _attributes: 
+      idMethod: native
+    id_mensaje: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    texto: 
+      type: CHAR
+      size: 250
+      required: true
+    id_usuario: 
+      type: INTEGER
+      required: true
+      foreignTable: USUARIOS
+      foreignReference: id_usuario
+      onDelete: RESTRICT
+      onUpdate: RESTRICT
+    id_conversacion: 
+      type: INTEGER
+      required: true
+      foreignTable: CONVERSACIONES
+      foreignReference: id_conversacion
+      onDelete: RESTRICT
+      onUpdate: RESTRICT
+    date: 
+      type: TIMESTAMP
+      required: true
+    _indexes: 
+      id_usuario: 
+        - id_usuario
+      id_conversacion: 
+        - id_conversacion
+  USUARIOS: 
+    _attributes: 
+      idMethod: native
+    id_usuario: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    nombre: 
+      type: CHAR
+      size: 50
+      required: true
+    telefono: 
+      type: INTEGER
+    estado: 
+      type: CHAR
+      size: 25
+    _uniques: 
+      telefono: 
+        - telefono
+  USU_CONV: 
+    id_usuario: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: USUARIOS
+      foreignReference: id_usuario
+      onDelete: RESTRICT
+      onUpdate: RESTRICT
+    id_conversacion: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: CONVERSACIONES
+      foreignReference: id_conversacion
+      onDelete: CASCADE
+      onUpdate: RESTRICT
+    _indexes: 
+      id_conversacion: 
+        - id_conversacion
