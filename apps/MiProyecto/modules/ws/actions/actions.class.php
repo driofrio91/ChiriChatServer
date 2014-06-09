@@ -160,7 +160,17 @@ class wsActions extends sfActions {
                     'participantes' => $participantes);
                 
                 $this->result = $this->getJson($resultDispositivo);
-            }
+            }else{
+                
+            
+            
+            $sinParticipantes = array('error' => 'No hay participantes en la conversacion');
+            
+            $this->getResponse()->setStatusCode(501);
+            
+             $this->result = $this->getJson($sinParticipantes);
+             
+             }
         }
     }
 
