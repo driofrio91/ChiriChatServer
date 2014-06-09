@@ -300,6 +300,13 @@ abstract class BaseConversacionesPeer {
 		foreach($objects as $obj) {
 
 
+			include_once 'lib/model/Mensajes.php';
+
+						$c = new Criteria();
+			
+			$c->add(MensajesPeer::ID_CONVERSACION, $obj->getIdConversacion());
+			$affectedRows += MensajesPeer::doDelete($c, $con);
+
 			include_once 'lib/model/UsuConv.php';
 
 						$c = new Criteria();

@@ -33,18 +33,15 @@ propel:
       required: true
       foreignTable: USUARIOS
       foreignReference: id_usuario
-      onDelete: RESTRICT
+      onDelete: CASCADE
       onUpdate: RESTRICT
     id_conversacion: 
       type: INTEGER
       required: true
       foreignTable: CONVERSACIONES
       foreignReference: id_conversacion
-      onDelete: RESTRICT
+      onDelete: CASCADE
       onUpdate: RESTRICT
-    date: 
-      type: TIMESTAMP
-      required: true
     _indexes: 
       id_usuario: 
         - id_usuario
@@ -77,7 +74,7 @@ propel:
       primaryKey: true
       foreignTable: USUARIOS
       foreignReference: id_usuario
-      onDelete: RESTRICT
+      onDelete: CASCADE
       onUpdate: RESTRICT
     id_conversacion: 
       type: INTEGER

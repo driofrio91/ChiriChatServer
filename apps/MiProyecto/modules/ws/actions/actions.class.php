@@ -106,12 +106,11 @@ class wsActions extends sfActions {
                     // $temp->sendGCM(array());
                 }
             }
-            $JsonOldUser = array('nombre' => $usuario->getNombre(),
-                'telefono' => $usuario->getTelefono(),
-                'estado' => $usuario->getEstado(),
-                'id_usuario' => $usuario->getPrimaryKey());
+             $usuario = array('error' => 'Ese usuario ya esta registrado');
+            
+            $this->getResponse()->setStatusCode(502);
 
-            $this->Usuario = $this->getJson($JsonOldUser);
+            $this->Usuario = $this->getJson($usuario);
         } else {
             //Codigo para enviar el response code
         }
@@ -226,7 +225,6 @@ class wsActions extends sfActions {
             $mensaje->setTexto($json['texto']);
             $mensaje->setIdUsuario($json['idUsuario']);
             $mensaje->setIdConversacion($json['idConver']);
-            $mensaje->setDate(date(DATE_RFC2822));
 
             $mensaje->save();
 

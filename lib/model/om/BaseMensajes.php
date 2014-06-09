@@ -23,10 +23,6 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 	
 	protected $id_conversacion;
 
-
-	
-	protected $date;
-
 	
 	protected $aUsuarios;
 
@@ -65,28 +61,6 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 	{
 
 		return $this->id_conversacion;
-	}
-
-	
-	public function getDate($format = 'Y-m-d H:i:s')
-	{
-
-		if ($this->date === null || $this->date === '') {
-			return null;
-		} elseif (!is_int($this->date)) {
-						$ts = strtotime($this->date);
-			if ($ts === -1 || $ts === false) { 				throw new PropelException("Unable to parse value of [date] as date/time value: " . var_export($this->date, true));
-			}
-		} else {
-			$ts = $this->date;
-		}
-		if ($format === null) {
-			return $ts;
-		} elseif (strpos($format, '%') !== false) {
-			return strftime($format, $ts);
-		} else {
-			return date($format, $ts);
-		}
 	}
 
 	
@@ -154,23 +128,6 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 
 	} 
 	
-	public function setDate($v)
-	{
-
-		if ($v !== null && !is_int($v)) {
-			$ts = strtotime($v);
-			if ($ts === -1 || $ts === false) { 				throw new PropelException("Unable to parse date/time value for [date] from input: " . var_export($v, true));
-			}
-		} else {
-			$ts = $v;
-		}
-		if ($this->date !== $ts) {
-			$this->date = $ts;
-			$this->modifiedColumns[] = MensajesPeer::DATE;
-		}
-
-	} 
-	
 	public function hydrate(ResultSet $rs, $startcol = 1)
 	{
 		try {
@@ -183,13 +140,11 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 
 			$this->id_conversacion = $rs->getInt($startcol + 3);
 
-			$this->date = $rs->getTimestamp($startcol + 4, null);
-
 			$this->resetModified();
 
 			$this->setNew(false);
 
-						return $startcol + 5; 
+						return $startcol + 4; 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating Mensajes object", $e);
 		}
@@ -358,9 +313,6 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 			case 3:
 				return $this->getIdConversacion();
 				break;
-			case 4:
-				return $this->getDate();
-				break;
 			default:
 				return null;
 				break;
@@ -375,7 +327,6 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 			$keys[1] => $this->getTexto(),
 			$keys[2] => $this->getIdUsuario(),
 			$keys[3] => $this->getIdConversacion(),
-			$keys[4] => $this->getDate(),
 		);
 		return $result;
 	}
@@ -403,9 +354,6 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 			case 3:
 				$this->setIdConversacion($value);
 				break;
-			case 4:
-				$this->setDate($value);
-				break;
 		} 	}
 
 	
@@ -417,7 +365,6 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 		if (array_key_exists($keys[1], $arr)) $this->setTexto($arr[$keys[1]]);
 		if (array_key_exists($keys[2], $arr)) $this->setIdUsuario($arr[$keys[2]]);
 		if (array_key_exists($keys[3], $arr)) $this->setIdConversacion($arr[$keys[3]]);
-		if (array_key_exists($keys[4], $arr)) $this->setDate($arr[$keys[4]]);
 	}
 
 	
@@ -429,7 +376,6 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 		if ($this->isColumnModified(MensajesPeer::TEXTO)) $criteria->add(MensajesPeer::TEXTO, $this->texto);
 		if ($this->isColumnModified(MensajesPeer::ID_USUARIO)) $criteria->add(MensajesPeer::ID_USUARIO, $this->id_usuario);
 		if ($this->isColumnModified(MensajesPeer::ID_CONVERSACION)) $criteria->add(MensajesPeer::ID_CONVERSACION, $this->id_conversacion);
-		if ($this->isColumnModified(MensajesPeer::DATE)) $criteria->add(MensajesPeer::DATE, $this->date);
 
 		return $criteria;
 	}
@@ -465,8 +411,6 @@ abstract class BaseMensajes extends BaseObject  implements Persistent {
 		$copyObj->setIdUsuario($this->id_usuario);
 
 		$copyObj->setIdConversacion($this->id_conversacion);
-
-		$copyObj->setDate($this->date);
 
 
 		$copyObj->setNew(true);

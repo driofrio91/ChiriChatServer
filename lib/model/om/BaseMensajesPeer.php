@@ -13,7 +13,7 @@ abstract class BaseMensajesPeer {
 	const CLASS_DEFAULT = 'lib.model.Mensajes';
 
 	
-	const NUM_COLUMNS = 5;
+	const NUM_COLUMNS = 4;
 
 	
 	const NUM_LAZY_LOAD_COLUMNS = 0;
@@ -32,26 +32,23 @@ abstract class BaseMensajesPeer {
 	const ID_CONVERSACION = 'MENSAJES.ID_CONVERSACION';
 
 	
-	const DATE = 'MENSAJES.DATE';
-
-	
 	private static $phpNameMap = null;
 
 
 	
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('IdMensaje', 'Texto', 'IdUsuario', 'IdConversacion', 'Date', ),
-		BasePeer::TYPE_COLNAME => array (MensajesPeer::ID_MENSAJE, MensajesPeer::TEXTO, MensajesPeer::ID_USUARIO, MensajesPeer::ID_CONVERSACION, MensajesPeer::DATE, ),
-		BasePeer::TYPE_FIELDNAME => array ('id_mensaje', 'texto', 'id_usuario', 'id_conversacion', 'date', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+		BasePeer::TYPE_PHPNAME => array ('IdMensaje', 'Texto', 'IdUsuario', 'IdConversacion', ),
+		BasePeer::TYPE_COLNAME => array (MensajesPeer::ID_MENSAJE, MensajesPeer::TEXTO, MensajesPeer::ID_USUARIO, MensajesPeer::ID_CONVERSACION, ),
+		BasePeer::TYPE_FIELDNAME => array ('id_mensaje', 'texto', 'id_usuario', 'id_conversacion', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
 	);
 
 	
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('IdMensaje' => 0, 'Texto' => 1, 'IdUsuario' => 2, 'IdConversacion' => 3, 'Date' => 4, ),
-		BasePeer::TYPE_COLNAME => array (MensajesPeer::ID_MENSAJE => 0, MensajesPeer::TEXTO => 1, MensajesPeer::ID_USUARIO => 2, MensajesPeer::ID_CONVERSACION => 3, MensajesPeer::DATE => 4, ),
-		BasePeer::TYPE_FIELDNAME => array ('id_mensaje' => 0, 'texto' => 1, 'id_usuario' => 2, 'id_conversacion' => 3, 'date' => 4, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
+		BasePeer::TYPE_PHPNAME => array ('IdMensaje' => 0, 'Texto' => 1, 'IdUsuario' => 2, 'IdConversacion' => 3, ),
+		BasePeer::TYPE_COLNAME => array (MensajesPeer::ID_MENSAJE => 0, MensajesPeer::TEXTO => 1, MensajesPeer::ID_USUARIO => 2, MensajesPeer::ID_CONVERSACION => 3, ),
+		BasePeer::TYPE_FIELDNAME => array ('id_mensaje' => 0, 'texto' => 1, 'id_usuario' => 2, 'id_conversacion' => 3, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
 	);
 
 	
@@ -112,8 +109,6 @@ abstract class BaseMensajesPeer {
 		$criteria->addSelectColumn(MensajesPeer::ID_USUARIO);
 
 		$criteria->addSelectColumn(MensajesPeer::ID_CONVERSACION);
-
-		$criteria->addSelectColumn(MensajesPeer::DATE);
 
 	}
 

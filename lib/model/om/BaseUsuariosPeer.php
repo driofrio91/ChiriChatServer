@@ -255,6 +255,7 @@ abstract class BaseUsuariosPeer {
 		}
 		$affectedRows = 0; 		try {
 									$con->begin();
+			$affectedRows += UsuariosPeer::doOnDeleteCascade(new Criteria(), $con);
 			$affectedRows += BasePeer::doDeleteAll(UsuariosPeer::TABLE_NAME, $con);
 			$con->commit();
 			return $affectedRows;
@@ -285,7 +286,7 @@ abstract class BaseUsuariosPeer {
 		$affectedRows = 0; 
 		try {
 									$con->begin();
-			
+			$affectedRows += UsuariosPeer::doOnDeleteCascade($criteria, $con);
 			$affectedRows += BasePeer::doDelete($criteria, $con);
 			$con->commit();
 			return $affectedRows;
@@ -293,6 +294,32 @@ abstract class BaseUsuariosPeer {
 			$con->rollback();
 			throw $e;
 		}
+	}
+
+	
+	protected static function doOnDeleteCascade(Criteria $criteria, Connection $con)
+	{
+				$affectedRows = 0;
+
+				$objects = UsuariosPeer::doSelect($criteria, $con);
+		foreach($objects as $obj) {
+
+
+			include_once 'lib/model/Mensajes.php';
+
+						$c = new Criteria();
+			
+			$c->add(MensajesPeer::ID_USUARIO, $obj->getIdUsuario());
+			$affectedRows += MensajesPeer::doDelete($c, $con);
+
+			include_once 'lib/model/UsuConv.php';
+
+						$c = new Criteria();
+			
+			$c->add(UsuConvPeer::ID_USUARIO, $obj->getIdUsuario());
+			$affectedRows += UsuConvPeer::doDelete($c, $con);
+		}
+		return $affectedRows;
 	}
 
 	

@@ -40,7 +40,5 @@ class MensajesMapBuilder {
 
 		$tMap->addForeignKey('ID_CONVERSACION', 'IdConversacion', 'int', CreoleTypes::INTEGER, 'CONVERSACIONES', 'ID_CONVERSACION', true, null);
 
-		$tMap->addColumn('DATE', 'Date', 'int', CreoleTypes::TIMESTAMP, true, null);
-
 	} 
 } 
