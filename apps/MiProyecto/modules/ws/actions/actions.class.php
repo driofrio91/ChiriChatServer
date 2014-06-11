@@ -9,27 +9,6 @@
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class wsActions extends sfActions {
-//http://prueba.local/ws/createConversacion?json={%22Owner%22:%22Danny%22,%22Nombre%22:%220%22:{%22Nombre%22:%22Danny%22,%22telefono%22:%2269696966%22,%22estado%22:%22%22},%221%22:{%22Nombre%22:%22Alejandro%22,%22telefono%22:%22454545454%22,%22estado%22:%22%22}}
-//    /**
-//     * Executes index action
-//     *
-//     */
-//    public function executeIndex() {
-//        //$this->forward('default', 'module');
-//        $this->saludo = 'Hola Mundo';
-//    }
-//
-//    public function executeAccion2() {
-//        $this->saludo = 'hola mundo 2';
-//    }
-//
-//    public function executeRecibir() {
-//        $json = json_decode($_REQUEST['json'], true);
-//        if (is_array($json)) {
-//            error_log('entro en el if');
-//            $this->json = $json;
-//        }
-//    }
 
     /**
      * Metodo que nos devolvera una lista de usuarios actuales
@@ -37,27 +16,27 @@ class wsActions extends sfActions {
      */
     public function executeUsuarios() {
 
-        $peticion = json_decode($_REQUEST['json'],TRUE);
-        
+        $peticion = json_decode($_REQUEST['json'], TRUE);
+
         $allUsers = array();
-        
-            $c = new Criteria();
 
-            $c->add(UsuariosPeer::TELEFONO, $peticion['Telefono'], Criteria::NOT_EQUAL);
-            
-            $usuarios = UsuariosPeer::doSelect($c);
+        $c = new Criteria();
 
-            foreach ($usuarios as $valor) {
-                
+        $c->add(UsuariosPeer::TELEFONO, $peticion['Telefono'], Criteria::NOT_EQUAL);
+
+        $usuarios = UsuariosPeer::doSelect($c);
+
+        foreach ($usuarios as $valor) {
+
+            if ($valor instanceof Usuarios) {
                 $users = array('id_usuario' => $valor->getIdUsuario(),
-                    'nombre' => $valor->getNombre(),
-                    'telefono' => $valor->getTelefono(),
-                    'estado' => $valor->getEstado());
-                  //  echo var_export($users);
-                array_push($allUsers, $users);
-            
-
-            
+                'nombre' => $valor->getNombre(),
+                'telefono' => $valor->getTelefono(),
+                'estado' => $valor->getEstado(),
+                 'id_gcm' => "");
+            //  echo var_export($users);
+            array_push($allUsers, $users);
+            }
         }
         $this->json_users = $this->getJson($allUsers);
     }
@@ -72,47 +51,44 @@ class wsActions extends sfActions {
 
             $c->add(UsuariosPeer::TELEFONO, $jsonNewUser['telefono']);
 
-            $usuario = UsuariosPeer::doSelectOne($c);
+            $consulta = UsuariosPeer::doSelectOne($c);
 
-            if ($usuario instanceof Usuarios) {
-
+            if (!$consulta instanceof Usuarios) {
+                
+                $usuario = new Usuarios();
+                
                 $usuario->setNombre($jsonNewUser['nombre']);
                 $usuario->setEstado($jsonNewUser['estado']);
+                $usuario->setTelefono($jsonNewUser['telefono']);
+                $usuario->setIdgcm($jsonNewUser['idgcm']);
                 $usuario->save();
+
+                //Creamos un JSON con los datos del usuario
+                //Esto es de prueba para ver que se crea, el cliente
+                //no tiene que conocer su id en la DB 
+                $jsonUser = array('id_usuario' => $usuario->getPrimaryKey(),
+                    'nombre' => $usuario->getNombre(),
+                    'telefono' => $usuario->getTelefono(),
+                    'estado' => $usuario->getEstado(),
+                    'id_usuario' => $usuario->getPrimaryKey(),
+                    'id_gcm' => $usuario->getIdgcm());
+                //llamamos la metodo que nos devulve un json
+                $this->Usuario = $this->getJson($jsonUser);
             } else {
 
-                if (!is_array($usuario)) {
+                $jsonUser = array('error' => 'Ese usuario ya esta registrado');
 
-                    //Creamos el nuevo usuario
-                    $usuario = new Usuarios();
-                    $usuario->setNombre($jsonNewUser['nombre']);
-                    $usuario->setTelefono($jsonNewUser['telefono']);
-                    $usuario->setEstado($jsonNewUser['estado']);
+                $this->getResponse()->setStatusCode(502);
 
-                    $usuario->save();
-
-                    $id = $usuario->getPrimaryKey();
-                    //Creamos un JSON con los datos del usuario
-                    //Esto es de prueba para ver que se crea, el cliente
-                    //no tiene que conocer su id en la DB 
-                    $jsonUser = array('nombre' => $usuario->getNombre(),
-                        'telefono' => $usuario->getTelefono(),
-                        'estado' => $usuario->getEstado(),
-                        'id_usuario' => $usuario->getPrimaryKey());
-                    //llamamos la metodo que nos devulve un json
-                    $this->Usuario = $this->getJson($jsonUser);
-
-                    // $temp = new GCM();
-                    // $temp->sendGCM(array());
-                }
+                $this->Usuario = $this->getJson($jsonUser);
             }
-             $usuario = array('error' => 'Ese usuario ya esta registrado');
-            
-            $this->getResponse()->setStatusCode(502);
-
-            $this->Usuario = $this->getJson($usuario);
         } else {
-            //Codigo para enviar el response code
+
+            $jsonUser = array('error' => 'JSON mal formado');
+
+            $this->getResponse()->setStatusCode(501);
+
+            $this->Usuario = $this->getJson($jsonUser);
         }
     }
 
@@ -127,8 +103,8 @@ class wsActions extends sfActions {
             //Creo el objeto conversacon
             $conversacion = new Conversaciones();
             $temp = $peticion['owner'];
-            error_log($temp.'antes de guardar conversacion');
-            
+            error_log($temp . 'antes de guardar conversacion');
+
             $conversacion->setPropietario($peticion['owner']);
             $conversacion->setNombre($peticion['nombre']);
 
@@ -148,28 +124,27 @@ class wsActions extends sfActions {
                     $usu_conver->setIdUsuario($usuario['id_usuario']);
                     error_log("Despues de insertar el id");
                     $usu_conver->setIdConversacion($conversacion->getPrimaryKey());
-                    error_log('key conversation'. $conversacion->getPrimaryKey());
-                   
+                    error_log('key conversation' . $conversacion->getPrimaryKey());
+
                     $usu_conver->save();
                     error_log("despues de guardar");
                 }
-                
+
                 $resultDispositivo = array('id_conver' => $usu_conver->getIdConversacion(),
                     'nombre' => $conversacion->getNombre(),
                     'participantes' => $participantes);
-                
+
                 $this->result = $this->getJson($resultDispositivo);
-            }else{
-                
-            
-            
-            $sinParticipantes = array('error' => 'No hay participantes en la conversacion');
-            
-            $this->getResponse()->setStatusCode(501);
-            
-             $this->result = $this->getJson($sinParticipantes);
-             
-             }
+            } else {
+
+
+
+                $sinParticipantes = array('error' => 'No hay participantes en la conversacion');
+
+                $this->getResponse()->setStatusCode(503);
+
+                $this->result = $this->getJson($sinParticipantes);
+            }
         }
     }
 
@@ -221,7 +196,7 @@ class wsActions extends sfActions {
         if (is_array($json)) {
             //Aqui recupero los datos del mensaje y creo el objeto mensaje
             $mensaje = new Mensajes();
-            
+
             $mensaje->setTexto($json['texto']);
             $mensaje->setIdUsuario($json['idUsuario']);
             $mensaje->setIdConversacion($json['idConver']);
@@ -232,11 +207,10 @@ class wsActions extends sfActions {
                 'texto' => $mensaje->getTexto(),
                 'idUsuario' => $mensaje->getIdUsuario(),
                 'idConver' => $mensaje->getIdConversacion());
-            
+
             $this->mensaje = $this->getJson($newMensaje);
         } else {
             //Datos del response no validos
-            
         }
     }
 
@@ -250,7 +224,7 @@ class wsActions extends sfActions {
 
         if (is_array($peticion)) {
 
-            echo 'Despues del if';
+           // echo 'Despues del if';
             $c = new Criteria();
             $c->add(MensajesPeer::ID_CONVERSACION, $peticion['idConversacion']);
             $c->add(MensajesPeer::ID_MENSAJE, $peticion['idMensaje'], Criteria::GREATER_EQUAL);
@@ -266,8 +240,7 @@ class wsActions extends sfActions {
                         'idMensaje' => $value->getIdMensaje(),
                         'texto' => $value->getTexto(),
                         'idUsuario' => $value->getIdUsuario(),
-                        'idConversacion' => $value->getIdConversacion(),
-                        'date' => $value->getDate());
+                        'idConversacion' => $value->getIdConversacion());
 
                     array_push($mensajesPedidos, $mensaje);
                 }
@@ -281,6 +254,18 @@ class wsActions extends sfActions {
             $this->mensajesPedidos = 'JSON mal formado';
         }
     }
+
+    public function executeContarUsuarios(){
+        
+        $c = new Criteria();
+        
+       $numContatos = UsuariosPeer::doCount($c);
+       
+       $result = array('contactos' => $numContatos);
+       
+       $this->resultFinal = $this->getJson($result);
+    }
+
 
     /**
      * Comantada la linea del comienzo del metodo que le pasa un IdConversacion,
