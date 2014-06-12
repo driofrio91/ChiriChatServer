@@ -13,7 +13,7 @@ abstract class BaseUsuariosPeer {
 	const CLASS_DEFAULT = 'lib.model.Usuarios';
 
 	
-	const NUM_COLUMNS = 4;
+	const NUM_COLUMNS = 5;
 
 	
 	const NUM_LAZY_LOAD_COLUMNS = 0;
@@ -32,23 +32,26 @@ abstract class BaseUsuariosPeer {
 	const ESTADO = 'USUARIOS.ESTADO';
 
 	
+	const IDGCM = 'USUARIOS.IDGCM';
+
+	
 	private static $phpNameMap = null;
 
 
 	
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('IdUsuario', 'Nombre', 'Telefono', 'Estado', ),
-		BasePeer::TYPE_COLNAME => array (UsuariosPeer::ID_USUARIO, UsuariosPeer::NOMBRE, UsuariosPeer::TELEFONO, UsuariosPeer::ESTADO, ),
-		BasePeer::TYPE_FIELDNAME => array ('id_usuario', 'nombre', 'telefono', 'estado', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+		BasePeer::TYPE_PHPNAME => array ('IdUsuario', 'Nombre', 'Telefono', 'Estado', 'Idgcm', ),
+		BasePeer::TYPE_COLNAME => array (UsuariosPeer::ID_USUARIO, UsuariosPeer::NOMBRE, UsuariosPeer::TELEFONO, UsuariosPeer::ESTADO, UsuariosPeer::IDGCM, ),
+		BasePeer::TYPE_FIELDNAME => array ('id_usuario', 'nombre', 'telefono', 'estado', 'IDGCM', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
 	);
 
 	
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('IdUsuario' => 0, 'Nombre' => 1, 'Telefono' => 2, 'Estado' => 3, ),
-		BasePeer::TYPE_COLNAME => array (UsuariosPeer::ID_USUARIO => 0, UsuariosPeer::NOMBRE => 1, UsuariosPeer::TELEFONO => 2, UsuariosPeer::ESTADO => 3, ),
-		BasePeer::TYPE_FIELDNAME => array ('id_usuario' => 0, 'nombre' => 1, 'telefono' => 2, 'estado' => 3, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+		BasePeer::TYPE_PHPNAME => array ('IdUsuario' => 0, 'Nombre' => 1, 'Telefono' => 2, 'Estado' => 3, 'Idgcm' => 4, ),
+		BasePeer::TYPE_COLNAME => array (UsuariosPeer::ID_USUARIO => 0, UsuariosPeer::NOMBRE => 1, UsuariosPeer::TELEFONO => 2, UsuariosPeer::ESTADO => 3, UsuariosPeer::IDGCM => 4, ),
+		BasePeer::TYPE_FIELDNAME => array ('id_usuario' => 0, 'nombre' => 1, 'telefono' => 2, 'estado' => 3, 'IDGCM' => 4, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, )
 	);
 
 	
@@ -109,6 +112,8 @@ abstract class BaseUsuariosPeer {
 		$criteria->addSelectColumn(UsuariosPeer::TELEFONO);
 
 		$criteria->addSelectColumn(UsuariosPeer::ESTADO);
+
+		$criteria->addSelectColumn(UsuariosPeer::IDGCM);
 
 	}
 

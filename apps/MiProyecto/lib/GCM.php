@@ -30,11 +30,19 @@
         // Mensaje que se enviará 
         //$mensaje = "Mensaje enviado directamente desde el servidor";
         //echo $mensaje;
-        $fields = array(
+        if ($mensaje instanceof Mensajes) {
+            
+            $temp = array("id" => $mensaje->getPrimaryKey(),
+                            "texto" => $mensaje->getTexto(),
+                            "idConver" => $mensaje->getIdConversacion(),
+                            "idUsuario" => $mensaje->getIdUsuario());
+            
+            
+            $fields = array(
             'registration_ids' => $registrationIDs,
-            'data' => array("message" => $mensaje->getTexto(),
-                            "idOrigen" => $mensaje->getIdUsuario()),
+            'data' => array("mensaje" => $temp),
         );
+        }
         $headers = array(
             'Authorization:key = ' . $this->apikey,
             'Content-Type: application/json'
@@ -62,8 +70,10 @@
         
        // echo is_null($result);
        
-        echo $result;
+      //  echo $result;
         
     }
+    
+    
 
 }

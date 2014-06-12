@@ -23,6 +23,10 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 	
 	protected $estado;
 
+
+	
+	protected $idgcm;
+
 	
 	protected $collMensajess;
 
@@ -67,6 +71,13 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 	{
 
 		return $this->estado;
+	}
+
+	
+	public function getIdgcm()
+	{
+
+		return $this->idgcm;
 	}
 
 	
@@ -126,6 +137,20 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 
 	} 
 	
+	public function setIdgcm($v)
+	{
+
+						if ($v !== null && !is_string($v)) {
+			$v = (string) $v; 
+		}
+
+		if ($this->idgcm !== $v) {
+			$this->idgcm = $v;
+			$this->modifiedColumns[] = UsuariosPeer::IDGCM;
+		}
+
+	} 
+	
 	public function hydrate(ResultSet $rs, $startcol = 1)
 	{
 		try {
@@ -138,11 +163,13 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 
 			$this->estado = $rs->getString($startcol + 3);
 
+			$this->idgcm = $rs->getString($startcol + 4);
+
 			$this->resetModified();
 
 			$this->setNew(false);
 
-						return $startcol + 4; 
+						return $startcol + 5; 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating Usuarios object", $e);
 		}
@@ -313,6 +340,9 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 			case 3:
 				return $this->getEstado();
 				break;
+			case 4:
+				return $this->getIdgcm();
+				break;
 			default:
 				return null;
 				break;
@@ -327,6 +357,7 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 			$keys[1] => $this->getNombre(),
 			$keys[2] => $this->getTelefono(),
 			$keys[3] => $this->getEstado(),
+			$keys[4] => $this->getIdgcm(),
 		);
 		return $result;
 	}
@@ -354,6 +385,9 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 			case 3:
 				$this->setEstado($value);
 				break;
+			case 4:
+				$this->setIdgcm($value);
+				break;
 		} 	}
 
 	
@@ -365,6 +399,7 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 		if (array_key_exists($keys[1], $arr)) $this->setNombre($arr[$keys[1]]);
 		if (array_key_exists($keys[2], $arr)) $this->setTelefono($arr[$keys[2]]);
 		if (array_key_exists($keys[3], $arr)) $this->setEstado($arr[$keys[3]]);
+		if (array_key_exists($keys[4], $arr)) $this->setIdgcm($arr[$keys[4]]);
 	}
 
 	
@@ -376,6 +411,7 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 		if ($this->isColumnModified(UsuariosPeer::NOMBRE)) $criteria->add(UsuariosPeer::NOMBRE, $this->nombre);
 		if ($this->isColumnModified(UsuariosPeer::TELEFONO)) $criteria->add(UsuariosPeer::TELEFONO, $this->telefono);
 		if ($this->isColumnModified(UsuariosPeer::ESTADO)) $criteria->add(UsuariosPeer::ESTADO, $this->estado);
+		if ($this->isColumnModified(UsuariosPeer::IDGCM)) $criteria->add(UsuariosPeer::IDGCM, $this->idgcm);
 
 		return $criteria;
 	}
@@ -411,6 +447,8 @@ abstract class BaseUsuarios extends BaseObject  implements Persistent {
 		$copyObj->setTelefono($this->telefono);
 
 		$copyObj->setEstado($this->estado);
+
+		$copyObj->setIdgcm($this->idgcm);
 
 
 		if ($deepCopy) {

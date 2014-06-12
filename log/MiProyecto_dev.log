@@ -12077,3 +12077,446 @@ Jun 07 19:57:19 symfony [info] {sfResponse} send content (66 o)
 Jun 07 19:57:19 symfony [info] {sfTimerManager} Configuration 0.73 ms (10)
 Jun 07 19:57:19 symfony [info] {sfTimerManager} Action "ws/newMensaje" 55.16 ms (1)
 Jun 07 19:57:19 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 21.63 ms (1)
+Jun 09 18:44:14 symfony [info] {sfRouting} connect "/"
+Jun 09 18:44:14 symfony [info] {sfRouting} connect "/symfony/:action/*"
+Jun 09 18:44:14 symfony [info] {sfRouting} connect "/:module"
+Jun 09 18:44:14 symfony [info] {sfRouting} connect "/:module/:action/*"
+Jun 09 18:44:14 symfony [info] {sfContext} initialization
+Jun 09 18:44:14 symfony [info] {sfController} initialization
+Jun 09 18:44:14 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 09 18:44:14 symfony [info] {sfRequest} request parameters array (  'json' => '{"telefono":464313463,"nombre":"ksjsjs","estado":":)"}',  'module' => 'ws',  'action' => 'insertUsuario',)
+Jun 09 18:44:14 symfony [info] {sfController} dispatch request
+Jun 09 18:44:14 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 09 18:44:14 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 09 18:44:14 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 09 18:44:14 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 09 18:44:14 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 09 18:44:14 symfony [info] {sfAction} call "wsActions->executeInsertUsuario()"
+Jun 09 18:44:14 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 09 18:44:14 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=?
+Jun 09 18:44:14 symfony [info] {sfCreole} applyLimit(): SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=464313463, offset: 0, limit: 1
+Jun 09 18:44:14 symfony [info] {sfCreole} executeQuery(): [0.12 ms] SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=464313463 LIMIT 1
+Jun 09 18:44:30 symfony [info] {sfContext} initialization
+Jun 09 18:44:30 symfony [info] {sfController} initialization
+Jun 09 18:44:30 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 09 18:44:30 symfony [info] {sfRequest} request parameters array (  'json' => '{"telefono":464313463,"nombre":"ksjsjs","estado":":)"}',  'module' => 'ws',  'action' => 'insertUsuario',)
+Jun 09 18:44:30 symfony [info] {sfController} dispatch request
+Jun 09 18:44:30 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 09 18:44:30 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 09 18:44:30 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 09 18:44:30 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 09 18:44:30 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 09 18:44:30 symfony [info] {sfAction} call "wsActions->executeInsertUsuario()"
+Jun 09 18:44:30 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 09 18:44:30 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=?
+Jun 09 18:44:30 symfony [info] {sfCreole} applyLimit(): SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=464313463, offset: 0, limit: 1
+Jun 09 18:44:30 symfony [info] {sfCreole} executeQuery(): [0.30 ms] SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=464313463 LIMIT 1
+Jun 09 18:45:08 symfony [info] {sfContext} initialization
+Jun 09 18:45:08 symfony [info] {sfController} initialization
+Jun 09 18:45:08 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 09 18:45:08 symfony [info] {sfRequest} request parameters array (  'json' => '{"telefono":464313463,"nombre":"ksjsjs","estado":":)"}',  'module' => 'ws',  'action' => 'insertUsuario',)
+Jun 09 18:45:08 symfony [info] {sfController} dispatch request
+Jun 09 18:45:08 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 09 18:45:08 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 09 18:45:08 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 09 18:45:08 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 09 18:45:08 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 09 18:45:08 symfony [info] {sfAction} call "wsActions->executeInsertUsuario()"
+Jun 09 18:45:08 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 09 18:45:08 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=?
+Jun 09 18:45:08 symfony [info] {sfCreole} applyLimit(): SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=464313463, offset: 0, limit: 1
+Jun 09 18:45:08 symfony [info] {sfCreole} executeQuery(): [0.41 ms] SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=464313463 LIMIT 1
+Jun 09 18:45:54 symfony [info] {sfContext} initialization
+Jun 09 18:45:54 symfony [info] {sfController} initialization
+Jun 09 18:45:54 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 09 18:45:54 symfony [info] {sfRequest} request parameters array (  'json' => '{"telefono":464313463,"nombre":"ksjsjs","estado":":)"}',  'module' => 'ws',  'action' => 'insertUsuario',)
+Jun 09 18:45:54 symfony [info] {sfController} dispatch request
+Jun 09 18:45:54 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 09 18:45:54 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 09 18:45:54 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 09 18:45:54 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 09 18:45:54 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 09 18:45:54 symfony [info] {sfAction} call "wsActions->executeInsertUsuario()"
+Jun 09 18:45:54 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 09 18:45:54 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=?
+Jun 09 18:45:54 symfony [info] {sfCreole} applyLimit(): SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=464313463, offset: 0, limit: 1
+Jun 09 18:45:54 symfony [info] {sfCreole} executeQuery(): [0.19 ms] SELECT USUARIOS.ID_USUARIO, USUARIOS.NOMBRE, USUARIOS.TELEFONO, USUARIOS.ESTADO FROM USUARIOS WHERE USUARIOS.TELEFONO=464313463 LIMIT 1
+Jun 09 18:45:54 symfony [info] {sfCreole} beginning transaction.
+Jun 09 18:45:54 symfony [info] {sfCreole} beginning transaction.
+Jun 09 18:45:54 symfony [info] {sfCreole} prepareStatement(): INSERT INTO USUARIOS (NOMBRE,ESTADO) VALUES (?,?)
+Jun 09 18:45:54 symfony [info] {sfCreole} executeUpdate(): INSERT INTO USUARIOS (NOMBRE,ESTADO) VALUES ('ksjsjs',':)')
+Jun 09 18:45:54 symfony [info] {sfCreole} committing transaction.
+Jun 09 18:45:54 symfony [info] {sfCreole} committing transaction.
+Jun 09 18:45:54 symfony [info] {sfView} initialize view for "ws/insertUsuario"
+Jun 09 18:45:54 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/insertUsuarioSuccess.php"
+Jun 09 18:45:54 symfony [info] {sfFilter} render to client
+Jun 09 18:45:54 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 09 18:45:54 symfony [info] {sfResponse} send header "Content-Type": "application/json; charset=utf-8"
+Jun 09 18:45:54 symfony [info] {sfResponse} send content (66 o)
+Jun 09 18:45:54 symfony [info] {sfTimerManager} Configuration 10.71 ms (11)
+Jun 09 18:45:54 symfony [info] {sfTimerManager} Action "ws/insertUsuario" 74.02 ms (1)
+Jun 09 18:45:54 symfony [info] {sfTimerManager} Database 0.18 ms (1)
+Jun 09 18:45:54 symfony [info] {sfTimerManager} View "Success" for "ws/insertUsuario" 16.19 ms (1)
+Jun 11 12:55:09 symfony [info] {sfRouting} connect "/"
+Jun 11 12:55:09 symfony [info] {sfRouting} connect "/symfony/:action/*"
+Jun 11 12:55:09 symfony [info] {sfRouting} connect "/:module"
+Jun 11 12:55:09 symfony [info] {sfRouting} connect "/:module/:action/*"
+Jun 11 12:55:09 symfony [info] {sfContext} initialization
+Jun 11 12:55:09 symfony [info] {sfController} initialization
+Jun 11 12:55:09 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 12:55:09 symfony [info] {sfRequest} request parameters array (  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 12:55:09 symfony [info] {sfController} dispatch request
+Jun 11 12:55:09 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 12:55:09 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 12:55:09 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 12:55:09 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 12:55:09 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 12:55:09 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 12:55:12 symfony [info] {sfContext} initialization
+Jun 11 12:55:12 symfony [info] {sfController} initialization
+Jun 11 12:55:12 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 12:55:12 symfony [info] {sfRequest} request parameters array (  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 12:55:12 symfony [info] {sfController} dispatch request
+Jun 11 12:55:12 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 12:55:12 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 12:55:12 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 12:55:12 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 12:55:12 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 12:55:12 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 12:55:45 symfony [info] {sfContext} initialization
+Jun 11 12:55:45 symfony [info] {sfController} initialization
+Jun 11 12:55:45 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 12:55:45 symfony [info] {sfRequest} request parameters array (  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 12:55:45 symfony [info] {sfController} dispatch request
+Jun 11 12:55:45 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 12:55:45 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 12:55:45 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 12:55:45 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 12:55:45 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 12:55:45 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 12:55:45 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 12:55:45 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 12:55:45 symfony [info] {sfFilter} render to client
+Jun 11 12:55:45 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 12:55:45 symfony [info] {sfResponse} send header "Content-Type": "text/html; charset=utf-8"
+Jun 11 12:55:45 symfony [info] {sfResponse} send content (16378 o)
+Jun 11 12:55:45 symfony [info] {sfTimerManager} Configuration 20.14 ms (11)
+Jun 11 12:55:45 symfony [info] {sfTimerManager} Action "ws/newMensaje" 0.07 ms (1)
+Jun 11 12:55:45 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 22.37 ms (1)
+Jun 11 13:00:01 symfony [info] {sfContext} initialization
+Jun 11 13:00:01 symfony [info] {sfController} initialization
+Jun 11 13:00:01 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 13:00:01 symfony [info] {sfRequest} request parameters array (  'josn' => '{"id":309,"texto":"Gkdkh","idUsuario":172,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 13:00:01 symfony [info] {sfController} dispatch request
+Jun 11 13:00:01 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 13:00:01 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 13:00:01 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 13:00:01 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 13:00:01 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 13:00:01 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 13:00:01 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 13:00:01 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 13:00:01 symfony [info] {sfFilter} render to client
+Jun 11 13:00:01 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 13:00:01 symfony [info] {sfResponse} send header "Content-Type": "text/html; charset=utf-8"
+Jun 11 13:00:01 symfony [info] {sfResponse} send content (17033 o)
+Jun 11 13:00:01 symfony [info] {sfTimerManager} Configuration 0.57 ms (10)
+Jun 11 13:00:01 symfony [info] {sfTimerManager} Action "ws/newMensaje" 0.08 ms (1)
+Jun 11 13:00:01 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 3.28 ms (1)
+Jun 11 13:00:14 symfony [info] {sfContext} initialization
+Jun 11 13:00:14 symfony [info] {sfController} initialization
+Jun 11 13:00:14 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 13:00:14 symfony [info] {sfRequest} request parameters array (  'json' => '{"id":309,"texto":"Gkdkh","idUsuario":172,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 13:00:14 symfony [info] {sfController} dispatch request
+Jun 11 13:00:14 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 13:00:14 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 13:00:14 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 13:00:14 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 13:00:14 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 13:00:14 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 13:00:14 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 11 13:00:14 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:00:14 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:00:14 symfony [info] {sfCreole} prepareStatement(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES (?,?,?)
+Jun 11 13:00:14 symfony [info] {sfCreole} executeUpdate(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',172,155)
+Jun 11 13:00:14 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:00:14 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:00:14 symfony [info] {sfCreole} prepareStatement(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=?
+Jun 11 13:00:14 symfony [info] {sfCreole} applyLimit(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155, offset: 0, limit: 1
+Jun 11 13:00:14 symfony [info] {sfCreole} executeQuery(): [0.27 ms] SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155 LIMIT 1
+Jun 11 13:00:14 symfony [info] {sfCreole} prepareStatement(): SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=?
+Jun 11 13:00:14 symfony [info] {sfCreole} executeQuery(): [0.22 ms] SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=155
+Jun 11 13:00:14 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=?
+Jun 11 13:00:14 symfony [info] {sfCreole} executeQuery(): [0.16 ms] SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=171
+Jun 11 13:00:15 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 13:00:15 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 13:00:15 symfony [info] {sfFilter} render to client
+Jun 11 13:00:15 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 13:00:15 symfony [info] {sfResponse} send header "Content-Type": "application/json; charset=utf-8"
+Jun 11 13:00:15 symfony [info] {sfResponse} send content (57 o)
+Jun 11 13:00:15 symfony [info] {sfTimerManager} Configuration 1.00 ms (10)
+Jun 11 13:00:15 symfony [info] {sfTimerManager} Action "ws/newMensaje" 477.28 ms (1)
+Jun 11 13:00:15 symfony [info] {sfTimerManager} Database 0.65 ms (3)
+Jun 11 13:00:15 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 6.69 ms (1)
+Jun 11 13:01:15 symfony [info] {sfContext} initialization
+Jun 11 13:01:15 symfony [info] {sfController} initialization
+Jun 11 13:01:15 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 13:01:15 symfony [info] {sfRequest} request parameters array (  'json' => '{"id":309,"texto":"Gkdkh","idUsuario":172,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 13:01:15 symfony [info] {sfController} dispatch request
+Jun 11 13:01:15 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 13:01:15 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 13:01:15 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 13:01:15 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 13:01:15 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 13:01:15 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 13:01:15 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 11 13:01:15 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:01:15 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:01:15 symfony [info] {sfCreole} prepareStatement(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES (?,?,?)
+Jun 11 13:01:15 symfony [info] {sfCreole} executeUpdate(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',172,155)
+Jun 11 13:01:15 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:01:15 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:01:15 symfony [info] {sfCreole} prepareStatement(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=?
+Jun 11 13:01:15 symfony [info] {sfCreole} applyLimit(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155, offset: 0, limit: 1
+Jun 11 13:01:15 symfony [info] {sfCreole} executeQuery(): [0.31 ms] SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155 LIMIT 1
+Jun 11 13:01:15 symfony [info] {sfCreole} prepareStatement(): SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=?
+Jun 11 13:01:15 symfony [info] {sfCreole} executeQuery(): [0.22 ms] SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=155
+Jun 11 13:01:15 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=?
+Jun 11 13:01:15 symfony [info] {sfCreole} executeQuery(): [0.25 ms] SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=171
+Jun 11 13:01:16 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 13:01:16 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 13:01:16 symfony [info] {sfFilter} render to client
+Jun 11 13:01:16 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 13:01:16 symfony [info] {sfResponse} send header "Content-Type": "application/json; charset=utf-8"
+Jun 11 13:01:16 symfony [info] {sfResponse} send content (57 o)
+Jun 11 13:01:16 symfony [info] {sfTimerManager} Configuration 0.82 ms (10)
+Jun 11 13:01:16 symfony [info] {sfTimerManager} Action "ws/newMensaje" 457.74 ms (1)
+Jun 11 13:01:16 symfony [info] {sfTimerManager} Database 0.78 ms (3)
+Jun 11 13:01:16 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 6.72 ms (1)
+Jun 11 13:02:11 symfony [info] {sfContext} initialization
+Jun 11 13:02:11 symfony [info] {sfController} initialization
+Jun 11 13:02:11 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 13:02:11 symfony [info] {sfRequest} request parameters array (  'json' => '{"id":309,"texto":"Gkdkh","idUsuario":172,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 13:02:11 symfony [info] {sfController} dispatch request
+Jun 11 13:02:11 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 13:02:11 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 13:02:11 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 13:02:11 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 13:02:11 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 13:02:11 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 13:02:11 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 11 13:02:11 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:02:11 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:02:11 symfony [info] {sfCreole} prepareStatement(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES (?,?,?)
+Jun 11 13:02:11 symfony [info] {sfCreole} executeUpdate(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',172,155)
+Jun 11 13:02:11 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:02:11 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:02:11 symfony [info] {sfCreole} prepareStatement(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=?
+Jun 11 13:02:11 symfony [info] {sfCreole} applyLimit(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155, offset: 0, limit: 1
+Jun 11 13:02:11 symfony [info] {sfCreole} executeQuery(): [0.39 ms] SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155 LIMIT 1
+Jun 11 13:02:11 symfony [info] {sfCreole} prepareStatement(): SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=?
+Jun 11 13:02:11 symfony [info] {sfCreole} executeQuery(): [0.28 ms] SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=155
+Jun 11 13:02:11 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=?
+Jun 11 13:02:11 symfony [info] {sfCreole} executeQuery(): [0.24 ms] SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=171
+Jun 11 13:02:11 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 13:02:11 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 13:02:11 symfony [info] {sfFilter} render to client
+Jun 11 13:02:11 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 13:02:11 symfony [info] {sfResponse} send header "Content-Type": "application/json; charset=utf-8"
+Jun 11 13:02:11 symfony [info] {sfResponse} send content (57 o)
+Jun 11 13:02:11 symfony [info] {sfTimerManager} Configuration 1.07 ms (10)
+Jun 11 13:02:11 symfony [info] {sfTimerManager} Action "ws/newMensaje" 464.36 ms (1)
+Jun 11 13:02:11 symfony [info] {sfTimerManager} Database 0.90 ms (3)
+Jun 11 13:02:11 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 6.63 ms (1)
+Jun 11 13:03:07 symfony [info] {sfContext} initialization
+Jun 11 13:03:07 symfony [info] {sfController} initialization
+Jun 11 13:03:07 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 13:03:07 symfony [info] {sfRequest} request parameters array (  'json' => '{"id":309,"texto":"Gkdkh","idUsuario":172,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 13:03:07 symfony [info] {sfController} dispatch request
+Jun 11 13:03:07 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 13:03:07 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 13:03:07 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 13:03:07 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 13:03:07 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 13:03:07 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 13:03:07 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 11 13:03:07 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:03:07 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:03:07 symfony [info] {sfCreole} prepareStatement(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES (?,?,?)
+Jun 11 13:03:07 symfony [info] {sfCreole} executeUpdate(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',172,155)
+Jun 11 13:03:07 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:03:07 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:03:07 symfony [info] {sfCreole} prepareStatement(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=?
+Jun 11 13:03:07 symfony [info] {sfCreole} applyLimit(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155, offset: 0, limit: 1
+Jun 11 13:03:07 symfony [info] {sfCreole} executeQuery(): [0.25 ms] SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155 LIMIT 1
+Jun 11 13:03:07 symfony [info] {sfCreole} prepareStatement(): SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=?
+Jun 11 13:03:07 symfony [info] {sfCreole} executeQuery(): [0.13 ms] SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=155
+Jun 11 13:03:07 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=?
+Jun 11 13:03:07 symfony [info] {sfCreole} executeQuery(): [0.19 ms] SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=171
+Jun 11 13:03:07 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 13:03:07 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 13:03:07 symfony [info] {sfFilter} render to client
+Jun 11 13:03:07 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 13:03:07 symfony [info] {sfResponse} send header "Content-Type": "application/json; charset=utf-8"
+Jun 11 13:03:07 symfony [info] {sfResponse} send content (57 o)
+Jun 11 13:03:07 symfony [info] {sfTimerManager} Configuration 1.03 ms (10)
+Jun 11 13:03:07 symfony [info] {sfTimerManager} Action "ws/newMensaje" 469.99 ms (1)
+Jun 11 13:03:07 symfony [info] {sfTimerManager} Database 0.57 ms (3)
+Jun 11 13:03:07 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 6.74 ms (1)
+Jun 11 13:04:00 symfony [info] {sfContext} initialization
+Jun 11 13:04:00 symfony [info] {sfController} initialization
+Jun 11 13:04:00 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 13:04:00 symfony [info] {sfRequest} request parameters array (  'json' => '{"id":309,"texto":"Gkdkh","idUsuario":172,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 13:04:00 symfony [info] {sfController} dispatch request
+Jun 11 13:04:00 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 13:04:00 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 13:04:00 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 13:04:00 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 13:04:00 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 13:04:00 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 13:04:00 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 11 13:04:00 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:04:00 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:04:00 symfony [info] {sfCreole} prepareStatement(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES (?,?,?)
+Jun 11 13:04:00 symfony [info] {sfCreole} executeUpdate(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',172,155)
+Jun 11 13:04:00 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:04:00 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:04:01 symfony [info] {sfCreole} prepareStatement(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=?
+Jun 11 13:04:01 symfony [info] {sfCreole} applyLimit(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155, offset: 0, limit: 1
+Jun 11 13:04:01 symfony [info] {sfCreole} executeQuery(): [0.23 ms] SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155 LIMIT 1
+Jun 11 13:04:01 symfony [info] {sfCreole} prepareStatement(): SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=?
+Jun 11 13:04:01 symfony [info] {sfCreole} executeQuery(): [0.18 ms] SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=155
+Jun 11 13:04:01 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=?
+Jun 11 13:04:01 symfony [info] {sfCreole} executeQuery(): [0.17 ms] SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=171
+Jun 11 13:04:01 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 13:04:01 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 13:04:01 symfony [info] {sfFilter} render to client
+Jun 11 13:04:01 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 13:04:01 symfony [info] {sfResponse} send header "Content-Type": "application/json; charset=utf-8"
+Jun 11 13:04:01 symfony [info] {sfResponse} send content (57 o)
+Jun 11 13:04:01 symfony [info] {sfTimerManager} Configuration 0.72 ms (10)
+Jun 11 13:04:01 symfony [info] {sfTimerManager} Action "ws/newMensaje" 325.95 ms (1)
+Jun 11 13:04:01 symfony [info] {sfTimerManager} Database 0.57 ms (3)
+Jun 11 13:04:01 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 6.52 ms (1)
+Jun 11 13:05:18 symfony [info] {sfContext} initialization
+Jun 11 13:05:18 symfony [info] {sfController} initialization
+Jun 11 13:05:18 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 13:05:18 symfony [info] {sfRequest} request parameters array (  'json' => '{"id":309,"texto":"Gkdkh","idUsuario":172,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 13:05:18 symfony [info] {sfController} dispatch request
+Jun 11 13:05:18 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 13:05:18 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 13:05:18 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 13:05:18 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 13:05:18 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 13:05:18 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 13:05:18 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 11 13:05:18 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:05:18 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:05:18 symfony [info] {sfCreole} prepareStatement(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES (?,?,?)
+Jun 11 13:05:18 symfony [info] {sfCreole} executeUpdate(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',172,155)
+Jun 11 13:05:18 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:05:18 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:05:18 symfony [info] {sfCreole} prepareStatement(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=?
+Jun 11 13:05:18 symfony [info] {sfCreole} applyLimit(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155, offset: 0, limit: 1
+Jun 11 13:05:18 symfony [info] {sfCreole} executeQuery(): [0.27 ms] SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155 LIMIT 1
+Jun 11 13:05:18 symfony [info] {sfCreole} prepareStatement(): SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=?
+Jun 11 13:05:18 symfony [info] {sfCreole} executeQuery(): [0.28 ms] SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=155
+Jun 11 13:05:18 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=?
+Jun 11 13:05:18 symfony [info] {sfCreole} executeQuery(): [0.28 ms] SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=171
+Jun 11 13:05:19 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 13:05:19 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 13:05:19 symfony [info] {sfFilter} render to client
+Jun 11 13:05:19 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 13:05:19 symfony [info] {sfResponse} send header "Content-Type": "application/json; charset=utf-8"
+Jun 11 13:05:19 symfony [info] {sfResponse} send content (57 o)
+Jun 11 13:05:19 symfony [info] {sfTimerManager} Configuration 1.05 ms (10)
+Jun 11 13:05:19 symfony [info] {sfTimerManager} Action "ws/newMensaje" 520.20 ms (1)
+Jun 11 13:05:19 symfony [info] {sfTimerManager} Database 0.82 ms (3)
+Jun 11 13:05:19 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 6.23 ms (1)
+Jun 11 13:06:18 symfony [info] {sfContext} initialization
+Jun 11 13:06:18 symfony [info] {sfController} initialization
+Jun 11 13:06:18 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 13:06:18 symfony [info] {sfRequest} request parameters array (  'json' => '{"id":309,"texto":"Gkdkh","idUsuario":172,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 13:06:18 symfony [info] {sfController} dispatch request
+Jun 11 13:06:18 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 13:06:18 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 13:06:18 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 13:06:18 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 13:06:18 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 13:06:18 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 13:06:18 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 11 13:06:18 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:06:18 symfony [info] {sfCreole} beginning transaction.
+Jun 11 13:06:18 symfony [info] {sfCreole} prepareStatement(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES (?,?,?)
+Jun 11 13:06:18 symfony [info] {sfCreole} executeUpdate(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',172,155)
+Jun 11 13:06:18 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:06:18 symfony [info] {sfCreole} committing transaction.
+Jun 11 13:06:18 symfony [info] {sfCreole} prepareStatement(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=?
+Jun 11 13:06:18 symfony [info] {sfCreole} applyLimit(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155, offset: 0, limit: 1
+Jun 11 13:06:18 symfony [info] {sfCreole} executeQuery(): [0.31 ms] SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155 LIMIT 1
+Jun 11 13:06:18 symfony [info] {sfCreole} prepareStatement(): SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=?
+Jun 11 13:06:18 symfony [info] {sfCreole} executeQuery(): [0.20 ms] SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=155
+Jun 11 13:06:18 symfony [info] {sfCreole} prepareStatement(): SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=?
+Jun 11 13:06:18 symfony [info] {sfCreole} executeQuery(): [0.17 ms] SELECT USUARIOS.IDGCM FROM USUARIOS WHERE USUARIOS.ID_USUARIO=171
+Jun 11 13:06:18 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 13:06:18 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 13:06:18 symfony [info] {sfFilter} render to client
+Jun 11 13:06:18 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 13:06:18 symfony [info] {sfResponse} send header "Content-Type": "application/json; charset=utf-8"
+Jun 11 13:06:18 symfony [info] {sfResponse} send content (57 o)
+Jun 11 13:06:18 symfony [info] {sfTimerManager} Configuration 1.16 ms (10)
+Jun 11 13:06:18 symfony [info] {sfTimerManager} Action "ws/newMensaje" 469.61 ms (1)
+Jun 11 13:06:18 symfony [info] {sfTimerManager} Database 0.68 ms (3)
+Jun 11 13:06:18 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 6.86 ms (1)
+Jun 11 16:50:28 symfony [info] {sfContext} initialization
+Jun 11 16:50:28 symfony [info] {sfController} initialization
+Jun 11 16:50:28 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 16:50:28 symfony [info] {sfRequest} request parameters array (  'json' => '{"id":309,"texto":"Gkdkh","idUsuario":172,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 16:50:28 symfony [info] {sfController} dispatch request
+Jun 11 16:50:28 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 16:50:28 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 16:50:28 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 16:50:28 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 16:50:28 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 16:50:28 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 16:50:28 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 11 16:50:28 symfony [info] {sfCreole} beginning transaction.
+Jun 11 16:50:28 symfony [info] {sfCreole} beginning transaction.
+Jun 11 16:50:28 symfony [info] {sfCreole} prepareStatement(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES (?,?,?)
+Jun 11 16:50:28 symfony [info] {sfCreole} executeUpdate(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',172,155)
+Jun 11 16:50:28 symfony [info] {sfCreole} rolling back transaction.
+Jun 11 16:50:28 symfony [info] {sfCreole} rolling back transaction.
+Jun 11 16:50:28 symfony [err] {sfException} Unable to execute INSERT statement. [wrapped: Could not execute update [Native Error: Cannot add or update a child row: a foreign key constraint fails (`chirichat`.`MENSAJES`, CONSTRAINT `MENSAJES_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `USUARIOS` (`id_usuario`) ON DELETE CASCADE)] [User Info: INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',172,155)]] in /home/danny/sfprojects/MiProyecto/lib/symfony/vendor/propel/util/BasePeer.php line 308
+Jun 11 16:50:51 symfony [info] {sfContext} initialization
+Jun 11 16:50:51 symfony [info] {sfController} initialization
+Jun 11 16:50:51 symfony [info] {sfRouting} match route [default] "/:module/:action/*"
+Jun 11 16:50:51 symfony [info] {sfRequest} request parameters array (  'json' => '{"id":309,"texto":"Gkdkh","idUsuario":174,"idConver":155}',  'module' => 'ws',  'action' => 'newMensaje',)
+Jun 11 16:50:51 symfony [info] {sfController} dispatch request
+Jun 11 16:50:51 symfony [info] {sfFilter} executing filter "sfRenderingFilter"
+Jun 11 16:50:51 symfony [info] {sfFilter} executing filter "sfWebDebugFilter"
+Jun 11 16:50:51 symfony [info] {sfFilter} executing filter "sfCommonFilter"
+Jun 11 16:50:51 symfony [info] {sfFilter} executing filter "sfFlashFilter"
+Jun 11 16:50:51 symfony [info] {sfFilter} executing filter "sfExecutionFilter"
+Jun 11 16:50:51 symfony [info] {sfAction} call "wsActions->executeNewMensaje()"
+Jun 11 16:50:51 symfony [info] {sfCreole} connect(): DSN: array (   'compat_assoc_lower' => NULL,   'compat_rtrim_string' => NULL,   'database' => 'chirichat',   'encoding' => NULL,   'hostspec' => 'localhost',   'password' => 'admin',   'persistent' => NULL,   'phptype' => 'mysql',   'port' => NULL,   'protocol' => NULL,   'socket' => NULL,   'username' => 'root', ), FLAGS: 0
+Jun 11 16:50:51 symfony [info] {sfCreole} beginning transaction.
+Jun 11 16:50:51 symfony [info] {sfCreole} beginning transaction.
+Jun 11 16:50:51 symfony [info] {sfCreole} prepareStatement(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES (?,?,?)
+Jun 11 16:50:51 symfony [info] {sfCreole} executeUpdate(): INSERT INTO MENSAJES (TEXTO,ID_USUARIO,ID_CONVERSACION) VALUES ('Gkdkh',174,155)
+Jun 11 16:50:51 symfony [info] {sfCreole} committing transaction.
+Jun 11 16:50:51 symfony [info] {sfCreole} committing transaction.
+Jun 11 16:50:51 symfony [info] {sfCreole} prepareStatement(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=?
+Jun 11 16:50:51 symfony [info] {sfCreole} applyLimit(): SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155, offset: 0, limit: 1
+Jun 11 16:50:51 symfony [info] {sfCreole} executeQuery(): [0.43 ms] SELECT CONVERSACIONES.ID_CONVERSACION, CONVERSACIONES.NOMBRE, CONVERSACIONES.PROPIETARIO FROM CONVERSACIONES WHERE CONVERSACIONES.ID_CONVERSACION=155 LIMIT 1
+Jun 11 16:50:51 symfony [info] {sfCreole} prepareStatement(): SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=?
+Jun 11 16:50:51 symfony [info] {sfCreole} executeQuery(): [0.35 ms] SELECT USU_CONV.ID_USUARIO FROM USU_CONV WHERE USU_CONV.ID_CONVERSACION=155
+Jun 11 16:50:51 symfony [info] {sfView} initialize view for "ws/newMensaje"
+Jun 11 16:50:51 symfony [info] {sfView} render "/home/danny/sfprojects/MiProyecto/apps/MiProyecto/modules/ws/templates/newMensajeSuccess.php"
+Jun 11 16:50:51 symfony [info] {sfFilter} render to client
+Jun 11 16:50:51 symfony [info] {sfResponse} send status "HTTP/1.0 200 OK"
+Jun 11 16:50:51 symfony [info] {sfResponse} send header "Content-Type": "application/json; charset=utf-8"
+Jun 11 16:50:51 symfony [info] {sfResponse} send content (57 o)
+Jun 11 16:50:51 symfony [info] {sfTimerManager} Configuration 1.02 ms (10)
+Jun 11 16:50:51 symfony [info] {sfTimerManager} Action "ws/newMensaje" 65.65 ms (1)
+Jun 11 16:50:51 symfony [info] {sfTimerManager} Database 0.77 ms (2)
+Jun 11 16:50:51 symfony [info] {sfTimerManager} View "Success" for "ws/newMensaje" 3.23 ms (1)

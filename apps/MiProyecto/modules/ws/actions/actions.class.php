@@ -30,12 +30,12 @@ class wsActions extends sfActions {
 
             if ($valor instanceof Usuarios) {
                 $users = array('id_usuario' => $valor->getIdUsuario(),
-                'nombre' => $valor->getNombre(),
-                'telefono' => $valor->getTelefono(),
-                'estado' => $valor->getEstado(),
-                 'id_gcm' => "");
-            //  echo var_export($users);
-            array_push($allUsers, $users);
+                    'nombre' => $valor->getNombre(),
+                    'telefono' => $valor->getTelefono(),
+                    'estado' => $valor->getEstado(),
+                    'id_gcm' => null);
+                //  echo var_export($users);
+                array_push($allUsers, $users);
             }
         }
         $this->json_users = $this->getJson($allUsers);
@@ -54,13 +54,13 @@ class wsActions extends sfActions {
             $consulta = UsuariosPeer::doSelectOne($c);
 
             if (!$consulta instanceof Usuarios) {
-                
+
                 $usuario = new Usuarios();
-                
+
                 $usuario->setNombre($jsonNewUser['nombre']);
                 $usuario->setEstado($jsonNewUser['estado']);
                 $usuario->setTelefono($jsonNewUser['telefono']);
-                $usuario->setIdgcm($jsonNewUser['idgcm']);
+                $usuario->setIdgcm($jsonNewUser['id_gcm']);
                 $usuario->save();
 
                 //Creamos un JSON con los datos del usuario
@@ -135,6 +135,9 @@ class wsActions extends sfActions {
                     'participantes' => $participantes);
 
                 $this->result = $this->getJson($resultDispositivo);
+                
+                
+                
             } else {
 
 
@@ -209,9 +212,12 @@ class wsActions extends sfActions {
                 'idConver' => $mensaje->getIdConversacion());
 
             $this->mensaje = $this->getJson($newMensaje);
+            
+             $this->RecuperarID($mensaje);
         } else {
             //Datos del response no validos
         }
+       
     }
 
     /**
@@ -224,7 +230,7 @@ class wsActions extends sfActions {
 
         if (is_array($peticion)) {
 
-           // echo 'Despues del if';
+            // echo 'Despues del if';
             $c = new Criteria();
             $c->add(MensajesPeer::ID_CONVERSACION, $peticion['idConversacion']);
             $c->add(MensajesPeer::ID_MENSAJE, $peticion['idMensaje'], Criteria::GREATER_EQUAL);
@@ -255,17 +261,16 @@ class wsActions extends sfActions {
         }
     }
 
-    public function executeContarUsuarios(){
-        
-        $c = new Criteria();
-        
-       $numContatos = UsuariosPeer::doCount($c);
-       
-       $result = array('contactos' => $numContatos);
-       
-       $this->resultFinal = $this->getJson($result);
-    }
+    public function executeContarUsuarios() {
 
+        $c = new Criteria();
+
+        $numContatos = UsuariosPeer::doCount($c);
+
+        $result = array('contactos' => $numContatos);
+
+        $this->resultFinal = $this->getJson($result);
+    }
 
     /**
      * Comantada la linea del comienzo del metodo que le pasa un IdConversacion,
@@ -286,7 +291,7 @@ class wsActions extends sfActions {
 //        $idConversacion = $_REQUEST['id'];
 //        $idOrigen = $_REQUEST['origen'];
 //        /////////////////////
-        echo 'recperando id';
+        //  echo 'recperando id';
         $c = new Criteria();
 
         $c->add(ConversacionesPeer::ID_CONVERSACION, $mensaje->getIdConversacion());
@@ -294,8 +299,10 @@ class wsActions extends sfActions {
         $conversacion = ConversacionesPeer::doSelectOne($c);
         //Conpruebo que el resultado es una instancia de conversaciones
         if ($conversacion instanceof Conversaciones) {
-            echo 'la comversacion existe';
+            //     echo 'la comversacion existe';
             $cUSU_CONV = new Criteria();
+            
+           // echo $mensaje->getIdConversacion();
 
             $cUSU_CONV->add(UsuConvPeer::ID_CONVERSACION, $mensaje->getIdConversacion());
 
@@ -304,15 +311,16 @@ class wsActions extends sfActions {
             $usu_conv = UsuConvPeer::doSelectRS($cUSU_CONV);
 
             while ($usu_conv->next()) {
-                echo 'enviando id de usuario';
+                //        echo 'enviando id de usuario';
                 $idEviar = $usu_conv->get(1);
-
+                
                 //TODO Linea que evita que te llegen tus propios mensajes
-                // if ($idEviar != $mensaje->getIdUsuario()) {
-                //Enviar el mensaje
-                echo $idEviar . 'Recibe ====== Envia' . $mensaje->getIdUsuario();
-                $this->EnviarMensaje($idEviar, $mensaje);
-                //  }
+                if ($idEviar != $mensaje->getIdUsuario()) {
+                    //Enviar el mensaje
+                    //        echo $idEviar . 'Recibe ====== Envia' . $mensaje->getIdUsuario();
+                    $this->EnviarMensaje($idEviar, $mensaje);
+                    // echo $idEviar;
+                }
             }
         }
     }
@@ -326,17 +334,17 @@ class wsActions extends sfActions {
      * @param type $idUsuario
      */
     public function EnviarMensaje($idUsuario, $mensaje) {
-        echo 'Metodo enviar mensaje';
+        // echo 'Metodo enviar mensaje';
         $c = new Criteria();
 
         $c->add(UsuariosPeer::ID_USUARIO, $idUsuario);
 
-        $c->addSelectColumn(UsuariosPeer::ID_GCM);
+        $c->addSelectColumn(UsuariosPeer::IDGCM);
 
         $result = UsuariosPeer::doSelectRS($c);
 
         while ($result->next()) {
-            echo 'Enviando los push a la clase';
+            //    echo 'Enviando los push a la clase';
             // echo $mensaje;
             $gcm = new GCM();
             $gcm->sendGCM($result->get(1), $mensaje);

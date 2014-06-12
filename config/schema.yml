@@ -64,6 +64,8 @@ propel:
     estado: 
       type: CHAR
       size: 25
+    IDGCM: 
+      type: LONGVARCHAR
     _uniques: 
       telefono: 
         - telefono

@@ -40,5 +40,7 @@ class UsuariosMapBuilder {
 
 		$tMap->addColumn('ESTADO', 'Estado', 'string', CreoleTypes::CHAR, false, 25);
 
+		$tMap->addColumn('IDGCM', 'Idgcm', 'string', CreoleTypes::LONGVARCHAR, false, null);
+
 	} 
 } 
